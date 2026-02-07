@@ -1,6 +1,6 @@
 # Component Gallery
 
-A curated collection of pixel-perfect, animated HTML & CSS assets designed for modularity and easy integration. This project serves as a "UI Lab" for experimenting with modern web design techniques like Glassmorphism, 3D Transforms, and Kinetic Animations.
+A **mini UI/UX project** designed to showcase diverse HTML & CSS components in a clean, interactive gallery view. This project serves as a "UI Lab" for experimenting with modern web design techniques like Glassmorphism, 3D Transforms, and Kinetic Animations.
 
 ## ✨ Features
 
@@ -22,7 +22,7 @@ A curated collection of pixel-perfect, animated HTML & CSS assets designed for m
 
 1.  **Clone the repository**:
     ```bash
-    git clone https://github.com/satyam/component-gallery.git
+    git clone https://github.com/theAnand17/component-gallery.git
     ```
 2.  **Open the project**:
     Simply open `index.html` in your favorite browser. No build step required!
@@ -53,6 +53,10 @@ A curated collection of pixel-perfect, animated HTML & CSS assets designed for m
 4.  **Kinetic CSS Loaders**: A collection of pure CSS loading animations.
 5.  **Card Hover Effect**: Advanced border-glow and shine interactions.
 6.  **Secret Code Reveal**: Hover-based decryption animation.
+
+## 📢 Credits
+
+This project includes components inspired by and adapted from **[prismic.io](https://prismic.io)**. Special thanks to their design showcases for providing high-quality UI inspiration.
 
 ## 👤 Author
 
