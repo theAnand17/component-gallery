@@ -1,0 +1,9 @@
+{
+    "components": [
+      {
+        "name": "Copy Button",
+        "path": "copy-button",
+        "description": "An animated copy button with bounce effect on press."
+      }
+    ]
+  }
