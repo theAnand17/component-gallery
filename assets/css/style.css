@@ -60,14 +60,21 @@ header .subtitle {
     line-height: 1.6;
 }
 
+.top-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 40px;
+}
+
 .satyam-logo {
     font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: -0.05em;
-    margin-bottom: 40px;
+    margin-bottom: 0;
     display: inline-block;
 }
-
 .satyam-logo span {
     color: #52525b;
     /* zinc-600 */
@@ -378,60 +385,77 @@ code {
 
 /* Social Header Links */
 .social-links {
-    position: absolute;
-    top: 30px;
-    right: 40px;
     display: flex;
-    gap: 16px;
+    gap: 14px;
     z-index: 10;
 }
 
 .social-card {
     position: relative;
     background-color: rgba(255, 255, 255, 0.015);
-    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
     cursor: pointer;
-    padding: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 48px;
     height: 48px;
     text-decoration: none;
-    transition: transform 0.2s, box-shadow 0.25s;
+    transition: box-shadow 0.25s, transform 0.25s;
     overflow: hidden;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05), 0 8px 15px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.1);
 
-    /* Variables for Hover Effect */
     --shine-opacity: .1;
     --shine-gradient: conic-gradient(from 205deg at 50% 50%, rgba(16, 185, 129, 0) 0deg, #10B981 25deg, rgba(52, 211, 153, 0.18) 295deg, rgba(16, 185, 129, 0) 360deg);
-    --hover-border-color: rgba(255, 255, 255, 0.2);
-    --hover-icon-color: #34D399;
+}
+
+.social-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background-color: rgba(255, 255, 255, 0.01);
 }
 
 .social-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    border-color: var(--hover-border-color);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.04), 0 15px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.2);
 }
 
 .social-card .icon {
     position: relative;
     z-index: 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: inline-flex;
+    padding: 8px;
+}
+
+.social-card .icon::after {
+    content: '';
+    position: absolute;
+    inset: 4.5px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(2px);
+    transition: background-color 0.25s, border-color 0.25s;
 }
 
 .social-card .icon svg {
     width: 20px;
     height: 20px;
+    position: relative;
+    z-index: 1;
     color: var(--text-secondary);
     transition: color 0.25s;
 }
 
+.social-card:hover .icon::after {
+    background-color: rgba(52, 211, 153, 0.1);
+    border-color: rgba(52, 211, 153, 0.2);
+}
+
 .social-card:hover .icon svg {
-    color: var(--hover-icon-color);
+    color: #34D399;
 }
 
 /* Shine Effect */
@@ -462,7 +486,6 @@ code {
 .social-card:hover .shine {
     opacity: 1;
 }
-
 /* Tooltip on Hover */
 .social-card:after {
     content: attr(data-label);
@@ -658,11 +681,14 @@ code {
 }
 
 @media (max-width: 768px) {
-    .social-links {
-        position: relative;
-        top: 0;
-        right: 0;
+    .top-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.9rem;
         margin-bottom: 20px;
+    }
+
+    .social-links {
         justify-content: center;
     }
 
@@ -702,3 +728,5 @@ code {
         padding-right: 1rem;
     }
 }
+
+
